@@ -18,8 +18,8 @@
                 <input type="text" id="nombre" name="nombre" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             <div class="mb-4">
-                <label for="fecha_nacimiento" class="block text-gray-700">Fecha de Nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="fecha" class="block text-gray-700">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             
             <div class="mb-4">
