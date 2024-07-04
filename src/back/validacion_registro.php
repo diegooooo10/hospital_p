@@ -2,7 +2,7 @@
 
 if (isset($_POST['nombre'], $_POST['fecha'], $_POST['especialidad'], $_POST['telefono'], $_POST['email'], $_POST['contrasena'])) {
     $nombre = $_POST['nombre'];
-    $fecha = $_POST['fecha'];
+    $fecha = $_POST['fecha']; 
     $especialidad = $_POST['especialidad'];
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];

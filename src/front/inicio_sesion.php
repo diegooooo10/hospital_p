@@ -10,15 +10,30 @@
 <body class="bg-gray-100">
 <section class="flex flex-col items-center  justify-center min-h-screen">
         <form action="../back/validacion_sesion.php" method="post" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-            <h2 class="text-2xl font-bold mb-6 text-center">Inicio Sesión</h2>
+            <h2 class="text-2xl font-bold text-center">Inicio Sesión</h2>
+            <hr class=" border-gray-300 border-solid border-t-2 py-6" >
+            <div>
+                <?php
+                        if (isset($_GET['error'])) {
+                            ?>
+                            <p class="error text-red-700 text-center mb-4">
+                            <?php
+                            echo $_GET['error'];
+                            ?>
+                            </p>
+                            <?php
+                        }
+                    ?>
+            </div>
+
             <div class="mb-4">
                 <label for="email" class="block text-gray-700">Correo Electrónico:</label>
-                <input type="email" id="email" name="email"  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
 
             <div class="mb-4">
                 <label for="password" class="block text-gray-700 ">Contraseña:</label>
-                <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <input type="password" id="contrasena" name="contrasena" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             
             <div class="text-center p-3">

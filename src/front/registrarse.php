@@ -11,7 +11,9 @@
 <section class="flex flex-col items-center justify-center min-h-screen">
 
         <form action="../back/validacion_registro.php" method="post" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md justify-center mx-auto" >
-            <h2 class="text-2xl font-bold mb-6 text-center">Registro</h2>
+            <h2 class="text-2xl font-bold text-center ">Registro</h2>
+            <hr class="mt-3 border-gray-300 border-solid border-t-2 py-6" >
+
             
             <div class="mb-4">
                 <label for="nombre" class="block text-gray-700">Nombre Completo:</label>
