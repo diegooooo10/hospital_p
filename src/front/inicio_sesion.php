@@ -32,7 +32,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="password" class="block text-gray-700 ">Contraseña:</label>
+                <label for="contrasena" class="block text-gray-700 ">Contraseña:</label>
                 <input type="password" id="contrasena" name="contrasena" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             

@@ -6,22 +6,20 @@ $username = "root";
 $password = "";
 $database = "hospital";
 
-// Crear conexión
 $conexion = new mysqli($servername, $username, $password, $database);
 
-// Verificar conexión
 if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);
 }
 
-if (isset($_POST['email']) && isset($_POST['contrasena'])) {
-    function validate($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+function validate($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
+if (isset($_POST['email']) && isset($_POST['contrasena'])) {
     $email = validate($_POST['email']);
     $contrasena = validate($_POST['contrasena']);
 
@@ -40,22 +38,25 @@ if (isset($_POST['email']) && isset($_POST['contrasena'])) {
             if (password_verify($contrasena, $row['contrasena'])) {
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['id'] = $row['id'];
-                header("Location: ../front/pagina.php");
+                $stmt->close();
+                $conexion->close();
+                header("Location: ../front/index.php");
                 exit();
             } else {
+                $stmt->close();
+                $conexion->close();
                 header("Location: ../front/inicio_sesion.php?error=La contraseña es incorrecta");
                 exit();
             }
         } else {
+            $stmt->close();
+            $conexion->close();
             header("Location: ../front/inicio_sesion.php?error=El correo o contraseña son incorrectos");
             exit();
         }
     }
-    
 } else {
+    $conexion->close();
     header("Location: ../front/inicio_sesion.php");
     exit();
-    
-
 }
-

@@ -7,17 +7,16 @@ if (isset($_POST['nombre'], $_POST['fecha'], $_POST['especialidad'], $_POST['tel
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
-    $contrasena_cifrada = md5($contrasena);
+    
     $fecha_convertida = date('Y-m-d', strtotime($fecha));
 
     if (!empty($nombre) && !empty($fecha_convertida) && !empty($especialidad) && !empty($telefono) && !empty($email) && !empty($contrasena)) {
         $contrasena_cifrada = password_hash($contrasena, PASSWORD_DEFAULT);
-    
+
         $conn = new mysqli('localhost', 'root', '', 'hospital');
         if ($conn->connect_error) {
-            die('connect error: ' . $conn->connect_error);
+            die('Connect error: ' . $conn->connect_error);
         } else {
-
             $stmt = $conn->prepare("INSERT INTO usuarios (nombre, fecha, especialidad, telefono, email, contrasena) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssss", $nombre, $fecha_convertida, $especialidad, $telefono, $email, $contrasena_cifrada);
             if ($stmt->execute()) {
@@ -34,3 +33,4 @@ if (isset($_POST['nombre'], $_POST['fecha'], $_POST['especialidad'], $_POST['tel
 } else {
     echo "<center>Error: Datos del formulario no recibidos.</center>";
 }
+ 
