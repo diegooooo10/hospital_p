@@ -20,8 +20,8 @@
             </div>
             
             <div class="mb-4">
-                <label for="fecha_nacimiento" class="block text-gray-700">Fecha de Nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="fecha" class="block text-gray-700">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             
             <div class="mb-4">
@@ -56,13 +56,13 @@
             </div>
             
             <div class="mb-4">
-                <label for="fecha_preferida" class="block text-gray-700">Fecha Preferida para la Cita:</label>
-                <input type="date" id="fecha_preferida" name="fecha_preferida" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="fcita" class="block text-gray-700">Fecha Preferida para la Cita:</label>
+                <input type="date" id="fcita" name="fcita" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             
             <div class="mb-4">
-                <label for="hora_preferida" class="block text-gray-700">Hora Preferida para la Cita:</label>
-                <input type="time" id="hora_preferida" name="hora_preferida" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="hcita" class="block text-gray-700">Hora Preferida para la Cita:</label>
+                <input type="time" id="hcita" name="hcita" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             
             <div class="mb-4">
@@ -76,8 +76,8 @@
             </div>
             
             <div class="mb-4">
-                <label for="mensaje_adicional" class="block text-gray-700">Mensaje Adicional:</label>
-                <textarea id="mensaje_adicional" name="mensaje_adicional" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                <label for="mensaje" class="block text-gray-700">Mensaje Adicional:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
             </div>
             
             <button type="submit"  class="w-full py-2 px-4 bg-blue-900 hover:bg-blue-950 text-white font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Solicitar Cita</button>
