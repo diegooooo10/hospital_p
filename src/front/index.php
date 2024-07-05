@@ -11,8 +11,8 @@
 
 </head>
 <body class="">
-    <?php  include '../comp/header.php'?>
-    <section class="mt-32">
+    <?php include "../comp/header.php"?>
+<section class="mt-32">
     <div class="w-full relative">
         <div class="swiper progress-slide-carousel swiper-container relative">
             <div class="swiper-wrapper">
