@@ -40,7 +40,7 @@ if (isset($_POST['email']) && isset($_POST['contrasena'])) {
                 $_SESSION['id'] = $row['id'];
                 $stmt->close();
                 $conexion->close();
-                header("Location: ../front/index.php");
+                header("Location: ../front/index.php?login=success");
                 exit();
             } else {
                 $stmt->close();

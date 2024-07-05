@@ -20,16 +20,16 @@ if (isset($_POST['nombre'], $_POST['fecha'], $_POST['genero'], $_POST['especiali
             $stmt = $conn->prepare("INSERT INTO citas (nombre, fecha, genero, especialidad, fcita, hcita, telefono, email, mensaje) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("sssssssss", $nombre, $fecha, $genero, $especialidad, $fcita, $hcita, $telefono, $email, $mensaje);
             if ($stmt->execute()) {
-                echo "<center>Datos Registrados...</center>";
+                header("Location: ../front/citas.php?cita=success");
             } else {
-                echo "<center>Error al registrar los datos: " . $stmt->error . "</center>";
+                header("Location: ../front/registrarse.php?error=Error al registrar los datos");
             }
             $stmt->close();
         }
         $conn->close();
     } else {
-        echo "<center>Por favor, completa todos los campos del formulario.</center>";
+        header("Location: ../front/registrarse.php?error=Por favor completa todos los campos");
     }
 } else {
-    echo "<center>Error: Datos del formulario no recibidos.</center>";
+    header("Location: ../front/registrarse.php?error=Datos no recibidos");
 }

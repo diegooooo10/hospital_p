@@ -20,17 +20,16 @@ if (isset($_POST['nombre'], $_POST['fecha'], $_POST['especialidad'], $_POST['tel
             $stmt = $conn->prepare("INSERT INTO usuarios (nombre, fecha, especialidad, telefono, email, contrasena) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssss", $nombre, $fecha_convertida, $especialidad, $telefono, $email, $contrasena_cifrada);
             if ($stmt->execute()) {
-                echo "<center>Datos Registrados...</center>";
+                header("Location: ../front/index.php?registrado=success");
             } else {
-                echo "<center>Error al registrar los datos: " . $stmt->error . "</center>";
+                header("Location: ../front/registrarse.php?error=Error al registrar los datos");
             }
             $stmt->close();
         }
         $conn->close();
     } else {
-        echo "<center>Por favor, completa todos los campos del formulario.</center>";
+        header("Location: ../front/registrarse.php?error=Por favor completa todos los campos");
     }
 } else {
-    echo "<center>Error: Datos del formulario no recibidos.</center>";
+    header("Location: ../front/registrarse.php?error=Datos no recibidos");
 }
- 

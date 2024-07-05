@@ -15,16 +15,16 @@ if (isset($_POST['nombre'], $_POST['email'], $_POST['motivo'], $_POST['mensaje']
             $stmt = $conn->prepare("INSERT INTO contacto (nombre, email, motivo, mensaje) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $nombre, $email, $motivo, $mensaje);
             if ($stmt->execute()) {
-                echo "<center>Datos Registrados...</center>";
+                header("Location: ../front/contacto.php?mensaje=success");
             } else {
-                echo "<center>Error al registrar los datos: " . $stmt->error . "</center>";
+                header("Location: ../front/contacto.php?error=Error al registrar los datos");
             }
             $stmt->close();
         }
         $conn->close();
     } else {
-        echo "<center>Por favor, completa todos los campos del formulario.</center>";
+        header("Location: ../front/contacto.php?error=Por favor completa todos los campos");
     }
 } else {
-    echo "<center>Error: Datos del formulario no recibidos.</center>";
+    header("Location: ../front/contacto.php?error=Datos del formulario no recibidos");
 }

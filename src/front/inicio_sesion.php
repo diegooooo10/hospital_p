@@ -10,7 +10,7 @@
 <body class="bg-gray-100">
 <section class="flex flex-col items-center  justify-center min-h-screen">
         <form action="../back/validacion_sesion.php" method="post" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-            <h2 class="text-2xl font-bold text-center">Inicio Sesión</h2>
+            <h2 class="text-2xl font-bold text-center mb-6">Inicio Sesión</h2>
             <hr class=" border-gray-300 border-solid border-t-2 py-6" >
             <div>
                 <?php
@@ -43,5 +43,7 @@
             
         </form>
     </section>
+
+<?php include '../comp/footer2.php'?>
 </body>
 </html>

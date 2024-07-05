@@ -11,9 +11,22 @@
 <section class="flex flex-col items-center justify-center min-h-screen">
 
         <form action="../back/validacion_registro.php" method="post" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md justify-center mx-auto" >
-            <h2 class="text-2xl font-bold text-center ">Registro</h2>
-            <hr class="mt-3 border-gray-300 border-solid border-t-2 py-6" >
+            <h2 class="text-2xl font-bold text-center mb-6 ">Registro</h2>
 
+            <hr class=" border-gray-300 border-solid border-t-2 py-6" >
+            <div>
+                <?php
+                        if (isset($_GET['error'])) {
+                            ?>
+                            <p class="error text-red-700 text-center mb-4">
+                            <?php
+                            echo $_GET['error'];
+                            ?>
+                            </p>
+                            <?php
+                        }
+                    ?>
+            </div>
             
             <div class="mb-4">
                 <label for="nombre" class="block text-gray-700">Nombre Completo:</label>
@@ -65,5 +78,7 @@
             <button type="submit" class="w-full py-2 px-4 bg-blue-900 hover:bg-blue-950 text-white font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ">Registrarse</button>
         </form>
     </section>
+    <?php include '../comp/footer2.php' ?>
+
 </body>
 </html>
